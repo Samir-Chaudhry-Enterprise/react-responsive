@@ -1,6 +1,6 @@
 import defaultThresholdMap from './defaultThresholdMap';
 
-const getCurrentValue = value => (value !== undefined ? value : null);
+const getCurrentValue = (value) => (value !== undefined ? value : null);
 
 const responsivePropBuilder = (currentThreshold, props, configuration, thresholdMap = defaultThresholdMap) => {
   // get the keys from the map, e.g. ['xs', 'sm', 'md', 'lg', 'xl']
@@ -16,7 +16,7 @@ const responsivePropBuilder = (currentThreshold, props, configuration, threshold
 
   // only an object can contain responsive values, null is an object also but that's not valid
   // e.g. size={{xs: 'h4', md: 'h3'}}
-  const propKeys = configuration.propKeys.filter(propKey => typeof props[propKey] === 'object' && props[propKey] !== null);
+  const propKeys = configuration.propKeys.filter((propKey) => typeof props[propKey] === 'object' && props[propKey] !== null);
 
   // loop through the props that have been found as being responsive and extract an object of name/value pairs
   const translatedValues = propKeys.reduce((acc, propKey) => {

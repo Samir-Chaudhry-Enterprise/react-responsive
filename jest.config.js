@@ -30,19 +30,19 @@ module.exports = {
       branches: 90,
       function: 100,
       lines: 100,
-      statements: 100
-    }
+      statements: 100,
+    },
   },
 
   // A map from regular expressions to paths to transformers
   transform: {
     '^.+\\.(js|jsx)$': require.resolve('./test-harness/preprocessor'),
-    '^(?!.*\\.(js|jsx|css|json)$)': require.resolve('./test-harness/fileTransform')
+    '^(?!.*\\.(js|jsx|css|json)$)': require.resolve('./test-harness/fileTransform'),
   },
 
   verbose: true,
   testURL: 'http://localhost',
 
   // The test environment that will be used for testing
-  testEnvironment: 'jest-environment-jsdom-global'
+  testEnvironment: 'jest-environment-jsdom-global',
 };
