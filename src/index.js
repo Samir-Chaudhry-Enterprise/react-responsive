@@ -1,3 +1,4 @@
+// Main exports for @libertymutual/react-responsive library
 export { default as WithThreshold } from './WithThreshold';
 export { default as WithResponsiveProps } from './WithResponsiveProps';
 export { default as useThreshold } from './useThreshold';

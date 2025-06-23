@@ -8,11 +8,7 @@ import defaultThresholdMap from './defaultThresholdMap';
 //   around it, we can conditionally useEffect on the server (no-op) and
 //   useLayoutEffect in the browser.
 const useEnhancedEffect =
-  typeof window !== 'undefined' &&
-    typeof window.document !== 'undefined' &&
-    typeof window.document.createElement !== 'undefined'
-    ? useLayoutEffect
-    : useEffect;
+  typeof window !== 'undefined' && typeof window.document !== 'undefined' && typeof window.document.createElement !== 'undefined' ? useLayoutEffect : useEffect;
 
 function useThreshold() {
   const responsiveContext = useContext(ResponsiveContext);
