@@ -5,7 +5,7 @@ import getThreshold from './getThreshold';
 import ResponsiveContext from './ResponsiveContext';
 import defaultThresholdMap from './defaultThresholdMap';
 
-const withThreshold = () => Component => {
+const withThreshold = () => (Component) => {
   class WithThreshold extends React.Component {
     map;
 
@@ -15,7 +15,7 @@ const withThreshold = () => Component => {
       super(props);
 
       this.state = {
-        threshold: null
+        threshold: null,
       };
     }
 
@@ -26,7 +26,7 @@ const withThreshold = () => Component => {
 
       this.setState(
         {
-          threshold: startingThreshold
+          threshold: startingThreshold,
         },
         () => window.addEventListener('resize', this.handleResize)
       );
@@ -48,7 +48,7 @@ const withThreshold = () => Component => {
       const newThreshold = getThreshold(window.innerWidth, this.map);
       if (this.state.threshold !== newThreshold) {
         this.setState({
-          threshold: newThreshold
+          threshold: newThreshold,
         });
       }
     };
@@ -58,7 +58,7 @@ const withThreshold = () => Component => {
 
       const more = {
         threshold: threshold || this.state.threshold,
-        ...this.props
+        ...this.props,
       };
 
       return <Component {...more} />;
