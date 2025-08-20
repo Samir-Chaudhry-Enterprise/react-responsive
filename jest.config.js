@@ -40,7 +40,8 @@ module.exports = {
     '^(?!.*\\.(js|jsx|css|json)$)': require.resolve('./test-harness/fileTransform'),
   },
 
-  verbose: true,
+  verbose: false,
+  maxWorkers: 1,
   testURL: 'http://localhost',
 
   // The test environment that will be used for testing
